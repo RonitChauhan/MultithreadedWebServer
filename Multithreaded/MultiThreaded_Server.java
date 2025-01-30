@@ -4,7 +4,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.function.Consumer;
 
-public class Server {
+public class MultiThreaded_Server {
     public Consumer<Socket> getConsumer() {
         return (clientSocket) -> {
             try (PrintWriter toSocket = new PrintWriter(clientSocket.getOutputStream(), true)) {
@@ -17,7 +17,7 @@ public class Server {
     
     public static void main(String[] args) {
         int port = 8010;
-        Server server = new Server();
+        MultiThreaded_Server server = new MultiThreaded_Server();
         
         try {
             ServerSocket serverSocket = new ServerSocket(port);

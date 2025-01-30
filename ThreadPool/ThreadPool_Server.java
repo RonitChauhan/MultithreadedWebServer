@@ -5,10 +5,10 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Server {
+public class ThreadPool_Server {
     private final ExecutorService threadPool;
 
-    public Server(int poolSize) {
+    public ThreadPool_Server(int poolSize) {
         this.threadPool = Executors.newFixedThreadPool(poolSize);
     }
 
@@ -23,7 +23,7 @@ public class Server {
     public static void main(String[] args) {
         int port = 8010;
         int poolSize = 10; // Adjust the pool size as needed
-        Server server = new Server(poolSize);
+        ThreadPool_Server server = new ThreadPool_Server(poolSize);
 
         try {
             ServerSocket serverSocket = new ServerSocket(port);

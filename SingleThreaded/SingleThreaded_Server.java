@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Server {
+public class SingleThreaded_Server {
     
     public void run() throws IOException, UnknownHostException{
         int port = 8010;
@@ -23,7 +23,7 @@ public class Server {
     }
 
     public static void main(String[] args){
-        Server server = new Server();
+        SingleThreaded_Server server = new SingleThreaded_Server();
         try{
             server.run();
         }catch(Exception ex){

@@ -7,7 +7,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Client {
+public class MultiThreaded_Client {
     
     public Runnable getRunnable() throws UnknownHostException, IOException {
         return new Runnable() {
@@ -37,7 +37,7 @@ public class Client {
     }
     
     public static void main(String[] args){
-        Client client = new Client();
+        MultiThreaded_Client client = new MultiThreaded_Client();
         for(int i=0; i<100; i++){
             try{
                 Thread thread = new Thread(client.getRunnable());
